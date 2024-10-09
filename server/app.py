@@ -11,6 +11,10 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
+@app.route('/')
+def index():
+    return "<h1>Welcome </h1>"
+
 @app.route("/customers", methods=['GET', 'POST'])
 def customers():
     if request.method == 'GET':
